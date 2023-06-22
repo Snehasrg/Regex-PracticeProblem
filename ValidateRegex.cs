@@ -21,7 +21,6 @@ namespace RegexProblem
             string[] inputs = { "sne_ha", "sneh_a", "SNe_hA", "S_neha" };
             ValidatePattern(inputs, pattern);
         }
-
         public static void ValidatePattern(string[] inputs, string pattern)
         {
             foreach (string input in inputs)
@@ -34,6 +33,18 @@ namespace RegexProblem
                 {
                     Console.WriteLine("{0} is invalid.", input);
                 }
+            }
+        }
+
+        public static void ValidateHTMLTags(string inputString)
+        {
+            Regex regex = new Regex(@"<[^>]+>");
+
+            MatchCollection matches = regex.Matches(inputString);
+
+            foreach (Match match in matches)
+            {
+                Console.WriteLine(match.Value);
             }
         }
 
