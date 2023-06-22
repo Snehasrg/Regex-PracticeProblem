@@ -15,6 +15,12 @@ namespace RegexProblem
             string[] inputs = { "ab", "abb", "abbb", "abbbb" };
             ValidatePattern(inputs, pattern);
         }
+        public static void FindSequencewithUnderscore()
+        {
+            string pattern = "^[a-z]+_[a-z]+$";
+            string[] inputs = { "sne_ha", "sneh_a", "SNe_hA", "S_neha" };
+            ValidatePattern(inputs, pattern);
+        }
 
         public static void ValidatePattern(string[] inputs, string pattern)
         {
@@ -30,5 +36,6 @@ namespace RegexProblem
                 }
             }
         }
+
     }
 }
