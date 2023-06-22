@@ -9,13 +9,13 @@ namespace RegexProblem
 {
     public class ValidateRegex
     {
-        public static void Match()
+        public static void Match()      //Q1
         {
             string pattern = "^[a]{1}[b]{2,3}$";
             string[] inputs = { "ab", "abb", "abbb", "abbbb" };
             ValidatePattern(inputs, pattern);
         }
-        public static void FindSequencewithUnderscore()
+        public static void FindSequencewithUnderscore()     //Q2
         {
             string pattern = "^[a-z]+_[a-z]+$";
             string[] inputs = { "sne_ha", "sneh_a", "SNe_hA", "S_neha" };
@@ -36,7 +36,7 @@ namespace RegexProblem
             }
         }
 
-        public static void ValidateHTMLTags(string inputString)
+        public static void ValidateHTMLTags(string inputString)     //Q3
         {
             Regex regex = new Regex(@"<[^>]+>");
 
@@ -48,7 +48,7 @@ namespace RegexProblem
             }
         }
 
-        public static void CountOccurence(string inputString)
+        public static void CountOccurence(string inputString)       //Q4
         {
             Regex regex = new Regex(@"fox(es)?");
 
@@ -57,7 +57,7 @@ namespace RegexProblem
 
         }
 
-        public static void FileExtension()
+        public static void FileExtension()      //Q5
         {
             Regex regex = new Regex(@"([^\s]+(\.(?i)(jpe?g|png|gif|bmp))$)");
 
@@ -71,6 +71,22 @@ namespace RegexProblem
             {
                 Console.WriteLine("Invalid file name");
             }
+        }
+
+        public static void WebsiteAddress()     //Q6
+        {
+            Regex regex = new Regex(@"^(http|http(s)?://)?([\w-]+\.)+[\w-]+[.com|.in|.org]+(\[\?%&=]*)?");
+            Console.WriteLine("Enter a url ");
+            string Website = Console.ReadLine();
+            if (regex.IsMatch(Website))
+            {
+                Console.WriteLine("Valid");
+            }
+            else
+            {
+                Console.WriteLine("Not valid");
+            }
+
         }
     }
 }
